@@ -102,10 +102,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             T.setText(Response);
-
-//La actividad devolvio un ok y se procece normalmente
-        } else if (requestCode == RESULT_CANCELED) {
-//Probablemente la activiades recibir un error y se cerro
         }
     }
 
