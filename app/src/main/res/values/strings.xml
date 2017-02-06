@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EvalTc2Fvf</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_proyecto1">Proyecto1</string>
+    <string name="title_activity_proyecto2">Proyecto2</string>
+    <string name="title_activity_proyecto3">Proyecto3</string>
+    <string name="title_activity_proyecto4">Proyecto4</string>
+    <string-array name="ProyectArray">
+        <item>Proyecto 1</item>
+        <item>Proyecto 2</item>
+        <item>Proyecto 3</item>
+        <item>Proyecto 4</item>
+           </string-array>
+</resources>

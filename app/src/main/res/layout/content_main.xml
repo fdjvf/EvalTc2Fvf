@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.uninorte.evaltc2fvf.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_weight="0.04"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:text="Seleccionar proyecto a evaluar" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:dropDownWidth="match_parent"
+            android:layout_weight="0.04"
+            android:background="@android:drawable/alert_light_frame" />
+
+        <Button
+            android:text="Evaluar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ProyectBtn"
+            android:onClick="NavigateToPr1"
+            android:layout_weight="0.28" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ShowGrade"
+            android:layout_weight="0.04"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+</RelativeLayout>
