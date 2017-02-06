@@ -3,10 +3,9 @@ package com.uninorte.evaltc2fvf;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -80,9 +79,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-            TextView T = (TextView) findViewById(R.id.ShowGrade);
-            String Response = "La evaluacion final es de: " + data.getStringExtra("FinalGrade");
+            int Opc = (int) spinner.getSelectedItemId();
+            TextView T = null;
+            data.getStringExtra("FinalGrade");
+            String Response = "Proyecto ";
+            switch (Opc) {
+                case 0:
+                    Response = Response + "1: " + data.getStringExtra("FinalGrade");
+                    T = (TextView) findViewById(R.id.ShowGrade1);
+                    break;
+                case 1:
+                    Response = Response + "2: " + data.getStringExtra("FinalGrade");
+                    T = (TextView) findViewById(R.id.ShowGrade2);
+                    break;
+                case 2:
+                    Response = Response + "3: " + data.getStringExtra("FinalGrade");
+                    T = (TextView) findViewById(R.id.ShowGrade3);
+                    break;
+                case 3:
+                    Response = Response + "4: " + data.getStringExtra("FinalGrade");
+                    T = (TextView) findViewById(R.id.ShowGrade4);
+                    break;
+            }
             T.setText(Response);
+
 //La actividad devolvio un ok y se procece normalmente
         } else if (requestCode == RESULT_CANCELED) {
 //Probablemente la activiades recibir un error y se cerro

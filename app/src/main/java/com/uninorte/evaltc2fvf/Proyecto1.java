@@ -2,13 +2,11 @@ package com.uninorte.evaltc2fvf;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Proyecto1 extends AppCompatActivity {
     Intent MyIntent;
@@ -28,16 +26,26 @@ public class Proyecto1 extends AppCompatActivity {
         EditText Txt2=((EditText)findViewById(R.id.PresText));
         EditText Txt3=((EditText)findViewById(R.id.UsaText));
 
+
+        if (Txt1.getText().toString().isEmpty() || Txt2.getText().toString().isEmpty() || Txt3.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Ningun campo de nota puede estar vacio", Toast.LENGTH_LONG).show();
+            return;
+        }
         Float N1=Float.parseFloat(Txt1.getText().toString());
         Float N2=Float.parseFloat(Txt2.getText().toString());
         Float N3=Float.parseFloat(Txt3.getText().toString());
-        HelperClass Grade=new HelperClass(N1,N2,N3);
-         String Final=Grade.FinalGrade();
-        MyIntent=getIntent();
-        MyIntent.putExtra("FinalGrade",Final);
+        if (N1 > 5 || N2 > 5 || N3 > 5) {
+            Toast.makeText(this, "Ningun nota puede ser mayor de 5", Toast.LENGTH_LONG).show();
+            return;
+        } else {
+            HelperClass Grade = new HelperClass(N1, N2, N3);
+            String Final = Grade.FinalGrade();
+            MyIntent = getIntent();
+            MyIntent.putExtra("FinalGrade", Final);
+            setResult(RESULT_OK, MyIntent);
+            finish();
+        }
 
-        setResult(RESULT_OK,MyIntent);
-        finish();
 
     }
 }
